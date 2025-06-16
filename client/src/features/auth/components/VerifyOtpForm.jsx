@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-export const VerifyEmailForm = () => {
+export const VerifyOtpForm = () => {
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const inputsRef = [
     useRef(),
@@ -11,8 +12,10 @@ export const VerifyEmailForm = () => {
     useRef(),
   ];
 
+  const location = useLocation()
   useEffect(() => {
     inputsRef[0].current.focus();
+    console.log(location)
   }, []);
 
   function handleInputChange(e, index) {

@@ -53,5 +53,5 @@ input[type='password'] {
 }
 
 .primary-btn {
-  @apply bg-[#00a991] text-[#F7F9FA] font-semibold py-2 w-full text-lg rounded-md;
+  @apply bg-[#00a991] text-[#F7F9FA] font-semibold py-2 w-full text-lg rounded-md my-2;
 }

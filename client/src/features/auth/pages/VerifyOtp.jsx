@@ -3,19 +3,16 @@ import { AuthLayout } from '../AuthLayout';
 import { useAuthLayoutStore } from '../../../store/useAuthLayoutStore';
 import { VerifyOtpForm } from '../components/VerifyOtpForm';
 
-export const VerifyEmail = () => {
+export const VerifyOtp = () => {
   const { changeMode } = useAuthLayoutStore();
+
   useEffect(() => {
-    changeMode('verifyEmail');
+    changeMode('forgotPassword2');
   }, []);
 
   return (
     <AuthLayout>
       <VerifyOtpForm />
-
-      <button className="self-start my-4 p-2  rounded hover:bg-gray-200 active:bg-gray-300 transition">
-        Skip for now
-      </button>
     </AuthLayout>
   );
 };
