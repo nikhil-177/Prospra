@@ -1,2 +1,56 @@
 @import 'tailwindcss';
 @plugin 'daisyui';
+
+.primary-bg {
+  @apply bg-[#00a991];
+}
+
+.dark-bg {
+  @apply bg-[#0F172A];
+}
+
+.light-bg {
+  @apply bg-[#F7F9FA];
+}
+
+.primary-txt {
+  @apply text-[#00a991];
+}
+
+.dark-txt {
+  @apply text-[#0F172A];
+}
+
+.light-txt {
+  @apply text-[#F7F9FA];
+}
+
+.muted-txt {
+  @apply text-gray-300;
+}
+
+.poppins {
+  @apply font-[poppins];
+}
+
+.inter {
+  @apply font-[inter];
+}
+
+label {
+  @apply font-medium;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+  @apply input block w-full border-[#d1d5db] hover:border-[#a7f3eb] focus:border-[#00a991] focus:outline-0 focus:border-2;
+}
+
+.input-err {
+  @apply my-1 text-sm text-red-600 h-5;
+}
+
+.primary-btn {
+  @apply bg-[#00a991] text-[#F7F9FA] font-semibold py-2 w-full text-lg rounded-md;
+}
