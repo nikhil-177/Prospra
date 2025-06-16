@@ -43,6 +43,7 @@ label {
 
 input[type='text'],
 input[type='email'],
+input[type='tel'],
 input[type='password'] {
   @apply input block w-full border-[#d1d5db] hover:border-[#a7f3eb] focus:border-[#00a991] focus:outline-0 focus:border-2;
 }
