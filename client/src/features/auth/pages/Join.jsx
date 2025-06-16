@@ -4,18 +4,13 @@ import { JoinForm } from '../components/JoinForm';
 import { useAuthLayoutStore } from '../../../store/useAuthLayoutStore';
 
 export const Join = () => {
-  const { changeMode, changeHeadings, mode } = useAuthLayoutStore();
-
+  const { changeMode, mode } = useAuthLayoutStore();
 
   function handleJoinMode() {
     const currMode = mode === 'signup' ? 'signin' : 'signup';
     changeMode(currMode);
-
-    currMode === 'signin'
-      ? changeHeadings('Sign in to your Account')
-      : changeHeadings();
   }
-  
+
   return (
     <AuthLayout>
       <JoinForm />
