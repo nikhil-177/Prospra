@@ -20,6 +20,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Password is required'],
       minlength: [6, 'Password must be at least 6 characters long'],
+      select: false,
     },
     username: {
       type: String,
@@ -49,7 +50,7 @@ const userSchema = new mongoose.Schema(
     },
     provider: { type: [String], enum: ['email', 'google'], default: ['email'] },
     providerId: String,
-    refreshToken: String,
+    refreshToken: { type: String, select: false },
     isVerified: { type: Boolean, default: false },
   },
   { timestamps: true }
