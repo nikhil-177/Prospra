@@ -8,6 +8,9 @@ import {
   redirectToGoogleOauth,
   googleOauthCallback,
 } from './googleAuth/googleAuth.controller.js';
+import { refreshingTheTokens } from './refreshToken/refreshTokens.controller.js';
+import { isAuthenticated } from '../../shared/middlewares/auth.middleware.js';
+import { logoutUser } from './logout/logout.controller.js';
 
 const router = Router();
 
@@ -16,5 +19,8 @@ router.post('/login', validateResult(loginValidator), loginUser);
 
 router.get('/google', redirectToGoogleOauth);
 router.get('/google/callback', googleOauthCallback);
+
+router.get('/refresh-token', refreshingTheTokens);
+router.post('/logout', isAuthenticated,logoutUser);
 
 export default router;

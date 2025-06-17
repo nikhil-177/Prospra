@@ -4,13 +4,12 @@ import { sendCookiesAndRecieveToken } from '../utils/sendCookiesAndToken.js';
 
 export const loginUser = async (req, res, next) => {
   const { identifier, password } = req.validatedData;
-  console.log(identifier);
   try {
     // check if user exists
     const user = await User.findOne({
       $or: [{ email: identifier }, { username: identifier }],
     }).select('+password');
-    console.log('u',user);
+
     // if user not exists
     if (!user) {
       throw new AppError('No user found with the credential you gave', 404);
@@ -18,7 +17,7 @@ export const loginUser = async (req, res, next) => {
 
     //check password
     const isPasswordCorrect = await user.comparePassword(password);
-    console.log('p',isPasswordCorrect);
+    
     // if wrong password
     if (!isPasswordCorrect) {
       throw new AppError('No user found with the credential you gave', 404);
