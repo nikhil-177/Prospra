@@ -1,0 +1,38 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Backend of prospra website.",
+  "homepage": "https://github.com/nikhil-177/Prospra#readme",
+  "bugs": {
+    "url": "https://github.com/nikhil-177/Prospra/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikhil-177/Prospra.git"
+  },
+  "license": "ISC",
+  "author": "Nikhil Patel",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "arctic": "^3.7.0",
+    "bcryptjs": "^3.0.2",
+    "cloudinary": "^2.6.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.0",
+    "multer": "^2.0.1",
+    "node-cron": "^4.1.0",
+    "nodemailer": "^7.0.3",
+    "socket.io": "^4.8.1",
+    "stripe": "^18.2.1"
+  }
+}
