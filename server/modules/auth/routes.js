@@ -17,6 +17,7 @@ import {
   resetPassword,
   verifyOtpAndReturnTempToken,
 } from './forgotPassword/forgot.controller.js';
+import { verifyEmailWithOtpCode } from './emailVerify/emailVerify.controller.js';
 
 const router = Router();
 
@@ -34,5 +35,7 @@ router.get('/check-user', checkIfExists);
 router.post('/forgot-password', checkEmailAndGenerateOtp);
 router.post('/verify-otp', verifyOtpAndReturnTempToken);
 router.post('/reset-password', resetPassword);
+
+router.post('/verify-email', isAuthenticated, verifyEmailWithOtpCode);
 
 export default router;
