@@ -11,6 +11,7 @@ import {
 import { refreshingTheTokens } from './refreshToken/refreshTokens.controller.js';
 import { isAuthenticated } from '../../shared/middlewares/auth.middleware.js';
 import { logoutUser } from './logout/logout.controller.js';
+import { checkIfExists } from './checkUser/userCheck.controller.js';
 
 const router = Router();
 
@@ -22,5 +23,7 @@ router.get('/google/callback', googleOauthCallback);
 
 router.get('/refresh-token', refreshingTheTokens);
 router.post('/logout', isAuthenticated,logoutUser);
+
+router.get('/check-user',checkIfExists)
 
 export default router;
