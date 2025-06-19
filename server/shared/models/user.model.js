@@ -57,6 +57,7 @@ const userSchema = new mongoose.Schema(
     providerId: String,
     refreshToken: { type: String, select: false },
     isVerified: { type: Boolean, default: false },
+    resetPasswordToken:String,
   },
   { timestamps: true }
 );
