@@ -1,2 +1,58 @@
 @import 'tailwindcss';
 @plugin 'daisyui';
+
+.dark-bg {
+  @apply bg-[#0F172A];
+}
+
+.primary-bg {
+  @apply bg-[#00a991];
+}
+
+.light-bg {
+  @apply bg-[#F7F9FA];
+}
+
+.dark-txt {
+  @apply text-[#111827];
+}
+
+.light-txt {
+  @apply text-[#F1FAF9];
+}
+
+.primary-txt {
+  @apply text-[#00a991];
+}
+
+.muted-txt {
+  @apply text-slate-300;
+}
+
+.poppins {
+  @apply font-[poppins];
+}
+
+.inter {
+  @apply font-[inter];
+}
+
+label {
+  @apply font-medium text-lg;
+}
+
+.input-primary {
+  @apply block w-full mb-2 mt-1 border-gray-200 border-2 rounded-md px-4 py-2 hover:border-[#00a99062] focus:border-[#00a991] focus-within:border-[#00a991] focus:outline-0;
+}
+
+.input-hidden{
+    @apply block w-full mb-2 mt-1 border-gray-200 border-2 rounded-md pl-4 pr-10 py-2 hover:border-[#00a99062] focus:border-[#00a991] focus-within:border-[#00a991] focus:outline-0;
+}
+
+button{
+    @apply cursor-pointer
+}
+
+.primary-btn{
+    @apply bg-[#00a991] rounded-md py-2 w-full text-white font-semibold text-lg
+}
