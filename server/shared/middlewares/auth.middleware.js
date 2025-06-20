@@ -3,10 +3,10 @@ import jwt from 'jsonwebtoken';
 
 export const isAuthenticated = (req, res, next) => {
   if (!req.headers.authorization) {
-    throw new AppError('headers : Provide access token', 400);
+    throw new AppError('headers : Provide access token', 401);
   }
   if (!req.headers.authorization.startsWith('Bearer ')) {
-    throw new AppError('headers : Invalid authorization format', 400);
+    throw new AppError('headers : Invalid authorization format', 401);
   }
 
   const token = req.headers.authorization.split(' ')[1];
@@ -18,9 +18,9 @@ export const isAuthenticated = (req, res, next) => {
     next();
   } catch (error) {
     if (error.name === 'JsonWebTokenError') {
-      throw new AppError('Invalid access Token', 400);
+      throw new AppError('Invalid access Token', 401);
     } else if (error.name === 'TokenExpiredError') {
-      throw new AppError('Access Token expired', 400);
+      throw new AppError('Access Token expired', 401);
     } else {
       next(error);
     }
