@@ -11,7 +11,11 @@ export const validateResult = (schema) => {
     });
 
     if (error) {
-      const errors = error.details.map((e) => e.message);
+      console.log(error);
+      const errors = error.details.map((e) => ({
+        message: e.message,
+        field: e.context.key,
+      }));
       throw new AppError(error.name, 400, errors);
     }
 
