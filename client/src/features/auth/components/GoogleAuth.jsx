@@ -1,10 +1,15 @@
 import React from 'react';
 
 export const GoogleAuth = () => {
+  function redirectToGoogleAuth() {
+    window.location.href = 'http://localhost:8000/api/auth/google'
+  }
+
   return (
     <button
       type="button"
       className="flex items-center justify-center w-full h-10 px-4 border border-[#747775] rounded-md bg-white text-[#1f1f1f] text-sm font-medium font-sans tracking-[0.015rem] transition hover:shadow-md active:bg-[#3030301f] focus:outline-none"
+      onClick={redirectToGoogleAuth}
     >
       <svg
         className="w-5 h-5 mr-3"
